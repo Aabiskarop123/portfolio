@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aabiskar7Q | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="animated-bg"></div>
+  <header>
+    <nav class="modern-navbar">
+      <div class="brand">Aabiskar7Q</div>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-switcher" id="theme-switcher" title="Switch Theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </nav>
+  </header>
+  <main>
+    <section id="home">
+      <div class="hero-section">
+        <div class="hero-left">
+          <h1><span id="typewriter-name"></span></h1>
+          <h2><span id="typewriter-title"></span></h2>
+          <p class="hero-bio">
+            I'm a passionate Roblox developer with a strong foundation in Python and a creative approach to game design. With 3 years of programming experience and a growing portfolio of Roblox projects, I specialize in bringing unique ideas to life through engaging gameplay and efficient scripting.<br><br>
+            Whether you need a custom game mechanic, a full-featured Roblox experience, or a reliable scripter for your team, I'm ready to help you achieve your vision. Let's build something amazing together!
+          </p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary">Hire Me</a>
+            <a href="#contact" class="btn btn-outline">Let's Talk</a>
+          </div>
+          <div class="hero-socials" id="hero-socials"></div>
+          <div class="email-note">Want to get in touch? <a href="#contact" class="contact-link">Connect with me below!</a></div>
+        </div>
+        <div class="hero-right">
+          <div class="profile-frame large">
+            <img src="profile.png" alt="Aabiskar7Q Profile" id="profile-pic">
+            <div class="profile-glow"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="services">
+      <h2>Services I Offer</h2>
+      <p class="services-intro">Here's what I can do for your Roblox project. Every service is delivered with quality, creativity, and efficiency.</p>
+      <div class="services-list">
+        <div class="service-card animated-card" data-animate="fade-up">
+          <div class="service-icon">🎮</div>
+          <h3>Roblox Game Development</h3>
+          <p>Complete game creation on Roblox, from idea to launch. I handle scripting, design, and polish for a professional result.</p>
+        </div>
+        <div class="service-card animated-card" data-animate="fade-up" data-delay="100">
+          <div class="service-icon">⚙️</div>
+          <h3>System Scripting</h3>
+          <p>Custom systems for your game: inventory, combat, progression, and more. Clean, modular, and scalable code.</p>
+        </div>
+        <div class="service-card animated-card" data-animate="fade-up" data-delay="200">
+          <div class="service-icon">✨</div>
+          <h3>Feature Implementation</h3>
+          <p>Adding new features or mechanics to your existing Roblox game. Fast, reliable, and fully tested.</p>
+        </div>
+        <div class="service-card animated-card" data-animate="fade-up" data-delay="300">
+          <div class="service-icon">💾</div>
+          <h3>Data Saving Systems</h3>
+          <p>Secure, efficient data storage and leaderboards using ProfileService, DataStore, and more.</p>
+        </div>
+        <div class="service-card animated-card" data-animate="fade-up" data-delay="400">
+          <div class="service-icon">🖥️</div>
+          <h3>UI Systems</h3>
+          <p>Modern, interactive, and user-friendly UI for Roblox games: menus, HUDs, shops, and more.</p>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h2>Roblox Script Projects</h2>
+      <div id="projects-list"></div>
+    </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p class="contact-note">Connect with me on any of the platforms below!</p>
+      <div id="contact-links"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html> 
