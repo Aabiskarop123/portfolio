@@ -194,53 +194,89 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Projects data - moved from projects.json to script.js
+  const projectsData = [
+    {
+      "title": "Projectile Motion Script",
+      "video": "https://www.youtube.com/embed/QgRjWAD57tE?si=JlpJIFRktaeovNph"
+    },
+    {
+      "title": "Data Saving Using ProfileStore",
+      "video": "https://youtu.be/Yv6jm7OgX84"
+    },
+    {
+      "title": "Pathfinding AI Solving Maze",
+      "video": "https://youtu.be/JP2gYefdub8"
+    },
+    {
+      "title": "Sword System with OOP",
+      "video": "https://youtu.be/a8LlM66ngww"
+    },
+    {
+      "title": "Realistic Train with HingeConstraints",
+      "video": "https://youtu.be/MAeLSUbL1Fg"
+    },
+    {
+      "title": "Chassis System",
+      "video": "https://youtu.be/Vwm2jiVfMZg"
+    },
+    {
+      "title": "Quest System",
+      "video": "https://youtu.be/Q2Koun7297M"
+    },
+    {
+      "title": "Grow a Garden, Placing and Growing System",
+      "video": "https://youtu.be/0Vex0gokJeA"
+    },
+    {
+      "title": "Global Leaderboards and Donation System",
+      "video": "https://youtu.be/W5CxlIG8ksg"
+    },
+    {
+      "title": "Teleportation System with Multiplayer Support",
+      "video": "https://youtu.be/WmJRaxkf2K0"
+    }
+  ];
+
   // Projects section (single page)
   if (document.getElementById('projects-list')) {
-    fetch('projects.json')
-      .then(res => res.json())
-      .then(projects => {
-        const projectsList = document.getElementById('projects-list');
-        projectsList.innerHTML = "";
-        projects.forEach(project => {
-          const projectDiv = document.createElement('div');
-          projectDiv.className = 'project-item';
-          const title = document.createElement('h3');
-          title.textContent = project.title;
-          projectDiv.appendChild(title);
-          if (project.video) {
-            let videoUrl = project.video;
-            // Convert YouTube shareable link to embed link if needed
-            if (videoUrl.includes('youtu.be/')) {
-              const id = videoUrl.split('youtu.be/')[1].split(/[?&]/)[0];
-              videoUrl = `https://www.youtube.com/embed/${id}`;
-            } else if (videoUrl.includes('youtube.com/watch?v=')) {
-              const id = videoUrl.split('v=')[1].split('&')[0];
-              videoUrl = `https://www.youtube.com/embed/${id}`;
-            }
-            if (videoUrl.includes('youtube.com/embed/')) {
-              const iframe = document.createElement('iframe');
-              iframe.src = videoUrl;
-              iframe.width = "300";
-              iframe.height = "170";
-              iframe.frameBorder = "0";
-              iframe.allowFullscreen = true;
-              iframe.allow = "autoplay; encrypted-media";
-              projectDiv.appendChild(iframe);
-            } else {
-              const video = document.createElement('video');
-              video.src = videoUrl;
-              video.controls = true;
-              video.width = 300;
-              projectDiv.appendChild(video);
-            }
-          }
-          projectsList.appendChild(projectDiv);
-        });
-      })
-      .catch(err => {
-        document.getElementById('projects-list').textContent = "Failed to load projects.";
-        console.error(err);
-      });
+    const projectsList = document.getElementById('projects-list');
+    projectsList.innerHTML = "";
+    projectsData.forEach(project => {
+      const projectDiv = document.createElement('div');
+      projectDiv.className = 'project-item';
+      const title = document.createElement('h3');
+      title.textContent = project.title;
+      projectDiv.appendChild(title);
+      if (project.video) {
+        let videoUrl = project.video;
+        // Convert YouTube shareable link to embed link if needed
+        if (videoUrl.includes('youtu.be/')) {
+          const id = videoUrl.split('youtu.be/')[1].split(/[?&]/)[0];
+          videoUrl = `https://www.youtube.com/embed/${id}`;
+        } else if (videoUrl.includes('youtube.com/watch?v=')) {
+          const id = videoUrl.split('v=')[1].split('&')[0];
+          videoUrl = `https://www.youtube.com/embed/${id}`;
+        }
+        if (videoUrl.includes('youtube.com/embed/')) {
+          const iframe = document.createElement('iframe');
+          iframe.src = videoUrl;
+          iframe.width = "300";
+          iframe.height = "170";
+          iframe.frameBorder = "0";
+          iframe.allowFullscreen = true;
+          iframe.allow = "autoplay; encrypted-media";
+          projectDiv.appendChild(iframe);
+        } else {
+          const video = document.createElement('video');
+          video.src = videoUrl;
+          video.controls = true;
+          video.width = 300;
+          projectDiv.appendChild(video);
+        }
+      }
+      projectsList.appendChild(projectDiv);
+    });
   }
 
   // Contact links
